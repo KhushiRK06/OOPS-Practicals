@@ -1,0 +1,43 @@
+10/10 C++ NOTEBOOK ASSIGNMENT VERIFICATION
+=======================================================
+
+Notebook problem-statement mapping (from the user's prior notebook context):
+1. Data types, variables, constants, operators, input/output and percentage.
+2. Vehicle -> Car inheritance; ElectricCar is marked Not Required.
+3. Number class: default/parameterized/copy/move constructors, copy/move assignment, destructor (Rule of Five).
+4. Person -> Student -> GraduateStudent inheritance.
+5. Runtime polymorphism: abstract Shape with Circle, Rectangle, Triangle and area().
+6. Complex number: function overloading and operator+.
+7. Generic Stack template plus Queue template (Queue added as explicitly requested).
+8. STL student marks using vector, map, unordered_map, sort, find_if, transform.
+9. Banking custom exception hierarchy: BankException, InsufficientBalance, InvalidAmount, MinimumBalance.
+10. CSV file read/write with fstream and tellg/tellp/seekg/seekp.
+
+COMPILATION
+All 10 .cpp files compiled using g++ -std=c++11 -Wall -Wextra -pedantic.
+Result: 10/10 PASS; no compiler warnings or errors.
+
+EXECUTION
+All 10 programs ran successfully with representative test data.
+Assignment 1 input test: age=20, marks=85, grade=A -> percentage=85%, passed=true.
+Assignment 4 input test: Amit Sharma, 21, roll 101, BTech CSE, AI, 85 -> Graduated!
+Assignment 9 input tests:
+  Successful withdrawal: PASS | Enter withdrawal amount: Withdrawal Successful!
+Remaining Balance: 4000
+  Invalid amount: PASS | Enter withdrawal amount: Invalid withdrawal amount!
+  Minimum balance violation: PASS | Enter withdrawal amount: Minimum Balance of 500 must be maintained!
+  Insufficient balance: PASS | Enter withdrawal amount: Insufficient Balance!
+Assignment 7 extra boundary tests: Stack empty/full and Queue empty/full -> PASS.
+Assignment 10 created students.csv, read it, sought to beginning, appended a record -> PASS.
+
+INPUT VS HARDCODED VALUES
+Interactive input: Assignments 1, 4, 9.
+Predefined/demo data: Assignments 2, 3, 5, 6, 7, 8, 10.
+
+IMPORTANT IMPLEMENTATION NOTES
+- Assignment 7 uses a simple linear array Queue; dequeued slots are not reused (not circular).
+- Assignment 9 catches InsufficientBalance through its BankException base class; its what() text is 'Insufficient Balance!'.
+- Assignment 10 tellg() after reading to EOF can return -1; this is normal stream-position behavior. The program clears EOF before seekg(0).
+- The second archive CPP_Assignments_1_to_10.zip is a different code set and does not match the notebook mapping for assignments 2-4 (e.g. it uses BankAccount/SavingsAccount, NumberArray, and a different class example). Use this Notebook_Matched archive.
+
+No notebook problem statement was silently replaced. Queue is the only explicitly requested addition.
